@@ -1,0 +1,18 @@
+- Minimum RTO for a single AZ outage
+  - 1 minutes. The database has been configured with aws multi AZ enabled;
+
+- Minimum RTO for a single region outage
+  - identify the outage +(10 minutes)
+  - promote the secondary replica +(10 minutes)
+  - update aplications to connect to the secondary database +(10 minutes)
+  Total 30 minutes
+
+Minimum RPO for a single AZ outage
+  - 1 minutes (AZ auto recover)
+
+Minimum RPO for a single region outage
+  - application identify the outage and stops posting data (10 minutes)
+  - application connect to secondary database after promotion (20 minutes) 
+  - application recovered.
+  RPO - 10 minutes
+  
